@@ -6,8 +6,8 @@ Narou.rbをDocker上で実行するためのDockerイメージです。
 
 # 使い方
 docker-compose.ymlと同じディレクトリで以下を実行。
-```
-docker compose up -d --build
+```sh
+$ docker compose up -d --build
 ```
 2回目以降の起動は```--build```を外して構いません。
 
