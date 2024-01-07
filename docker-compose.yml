@@ -1,12 +1,18 @@
-version: "3.7"
-
 services:
   app:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NAROU_VERSION: 3.8.2
+        AOZORAEPUB3_VERSION: 1.1.1b18Q
+        UID: 1000
+        GID: 1000
     image: narou
+    user: narou
     command: ["narou", "web", "-np", "33000"]
     volumes:
-      - .:/novel:cached
+      - .:/home/narou/novel:cached
     tty: true
     stdin_open: true
     ports:
